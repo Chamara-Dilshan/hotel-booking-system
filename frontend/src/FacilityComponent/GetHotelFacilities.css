@@ -1,0 +1,188 @@
+/* GetHotelFacilities.css - Modern Facilities Display */
+
+.facilities-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.facilities-header {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--primary);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.facilities-header svg {
+  color: var(--accent);
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: var(--space-2);
+}
+
+/* Custom scrollbar */
+.facilities-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.facilities-grid::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: var(--rounded-full);
+}
+
+.facilities-grid::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: var(--rounded-full);
+}
+
+.facilities-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+.facility-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--rounded-lg);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  text-align: center;
+}
+
+.facility-card:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.facility-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--rounded-lg);
+  font-size: var(--text-lg);
+  transition: all var(--transition-base);
+}
+
+.facility-card:hover .facility-icon {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.facility-name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.facility-card:hover .facility-name {
+  color: var(--primary);
+  font-weight: var(--font-semibold);
+}
+
+/* Loading state */
+.facilities-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-8);
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+/* Empty state */
+.facilities-empty {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--text-muted);
+}
+
+.facilities-empty svg {
+  font-size: var(--text-4xl);
+  color: var(--gray-300);
+  margin-bottom: var(--space-3);
+}
+
+.facilities-empty p {
+  font-size: var(--text-base);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .facilities-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 768px) {
+  .facilities-section {
+    padding: var(--space-4);
+  }
+
+  .facilities-header {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+  }
+
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    max-height: 300px;
+  }
+
+  .facility-card {
+    padding: var(--space-3);
+  }
+
+  .facility-icon {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-base);
+  }
+
+  .facility-name {
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+
+  .facility-card {
+    padding: var(--space-2);
+  }
+
+  .facility-icon {
+    width: 32px;
+    height: 32px;
+  }
+}

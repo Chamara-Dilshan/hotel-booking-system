@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(java:*)",
+      "Bash(node --version:*)",
+      "Bash(npm:*)",
+      "Bash(mvn --version:*)",
+      "Bash(psql:*)",
+      "Bash(if [ -d \"D:/UOM Moratuwa/Project/Backend/Images\" ])",
+      "Bash(then echo \"Directory exists\")",
+      "Bash(else echo \"Directory does NOT exist\")",
+      "Bash(fi)",
+      "Bash(where:*)",
+      "Bash(find:*)",
+      "Bash(mvn clean install:*)",
+      "Bash(for:*)",
+      "Bash(do if ! grep -q \"@Data\" \"$file\")",
+      "Bash(then sed -i '/^public class/i import lombok.Data;\\\\n@Data' \"$file\")",
+      "Bash(done)",
+      "Bash(mvn clean compile:*)",
+      "Bash(mvn spring-boot:run:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(tree:*)",
+      "Bash(python -m pip show:*)",
+      "Bash(set:*)",
+      "Bash(printenv:*)",
+      "Read(//d/Projects/**)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

@@ -1,0 +1,214 @@
+/* index.css - Global Base Styles */
+
+/* CSS Reset / Normalize */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root Variables */
+:root {
+  /* Base font settings */
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Body defaults */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary, #111827);
+  min-height: 100vh;
+}
+
+/* Code font */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Root element */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Form elements */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Global input styles for dark theme */
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+select,
+textarea {
+  background: #1F2937 !important;
+  color: #F8FAFC !important;
+  border: 2px solid #374151;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent, #38BDF8);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+  outline: none;
+  background: #1F2937 !important;
+  color: #F8FAFC !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9CA3AF !important;
+}
+
+/* Ensure textarea text stays white */
+textarea,
+textarea:focus,
+textarea:active {
+  color: #F8FAFC !important;
+  caret-color: #F8FAFC;
+}
+
+/* Form control overrides for Bootstrap */
+.form-control,
+.form-select {
+  background: #1F2937 !important;
+  color: #F8FAFC !important;
+  border-color: #374151 !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background: #1F2937 !important;
+  color: #F8FAFC !important;
+  border-color: #38BDF8 !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
+}
+
+/* Remove default button styles */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent, #38BDF8);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--accent, #38BDF8);
+  color: white;
+}
+
+/* Custom Dark Theme Classes for Legacy Components */
+.custom-bg {
+  background: #1F2937 !important;
+}
+
+.custom-bg-text {
+  color: #F8FAFC !important;
+}
+
+.bg-color {
+  background: linear-gradient(135deg, #1E4F7A 0%, #0d3a57 100%) !important;
+}
+
+.border-color {
+  border-color: #374151 !important;
+}
+
+.text-color {
+  color: #F8FAFC !important;
+}
+
+.text-color3 {
+  color: #F8FAFC !important;
+}
+
+/* Dark Theme Card Styles */
+.card.custom-bg {
+  background: #1F2937 !important;
+  border: 1px solid #374151;
+}
+
+.card.custom-bg .card-header {
+  border-bottom: 1px solid #374151;
+}
+
+.card.custom-bg .card-body {
+  background: #1F2937;
+}
+
+/* Dark Theme Table Styles */
+.table.text-color {
+  color: #F8FAFC;
+}
+
+.table.text-color thead {
+  background: #111827;
+}
+
+.table.text-color th {
+  color: #F8FAFC;
+  background: #111827;
+  border-color: #374151;
+}
+
+.table.text-color td {
+  color: #F8FAFC;
+  border-color: #374151;
+}
+
+.table.text-color tbody tr:hover {
+  background: #374151;
+}
+
+.table-bordered.border-color {
+  border-color: #374151;
+}
+
+.form-card {
+  background: #1F2937 !important;
+}

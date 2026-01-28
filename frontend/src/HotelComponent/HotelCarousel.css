@@ -1,0 +1,168 @@
+/* HotelCarousel.css - Modern Carousel Styling */
+
+.hotel-carousel {
+  position: relative;
+  width: 100%;
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.hotel-carousel .carousel-inner {
+  border-radius: var(--rounded-lg);
+}
+
+.hotel-carousel .carousel-item {
+  transition: transform var(--transition-slow) ease-in-out;
+  height: 400px;
+}
+
+.hotel-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow) ease;
+}
+
+.hotel-carousel:hover .carousel-item img {
+  transform: scale(1.05);
+}
+
+/* Navigation Arrows */
+.hotel-carousel .carousel-control-prev,
+.hotel-carousel .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(56, 189, 248, 0.9);
+  border-radius: var(--rounded-full);
+  opacity: 0;
+  transition: all var(--transition-base);
+  border: 2px solid var(--white);
+}
+
+.hotel-carousel:hover .carousel-control-prev,
+.hotel-carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+.hotel-carousel .carousel-control-prev {
+  left: var(--space-4);
+}
+
+.hotel-carousel .carousel-control-next {
+  right: var(--space-4);
+}
+
+.hotel-carousel .carousel-control-prev:hover,
+.hotel-carousel .carousel-control-next:hover {
+  background: var(--accent);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.hotel-carousel .carousel-control-prev-icon,
+.hotel-carousel .carousel-control-next-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* Navigation Dots */
+.hotel-carousel .carousel-indicators {
+  bottom: var(--space-4);
+  margin-bottom: 0;
+  gap: var(--space-2);
+}
+
+.hotel-carousel .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--rounded-full);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid var(--white);
+  opacity: 1;
+  transition: all var(--transition-base);
+  margin: 0;
+}
+
+.hotel-carousel .carousel-indicators button.active {
+  width: 32px;
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.hotel-carousel .carousel-indicators button:hover {
+  background-color: var(--accent-light);
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hotel-carousel .carousel-item {
+    height: 280px;
+  }
+
+  .hotel-carousel .carousel-control-prev,
+  .hotel-carousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+  }
+
+  .hotel-carousel .carousel-control-prev {
+    left: var(--space-2);
+  }
+
+  .hotel-carousel .carousel-control-next {
+    right: var(--space-2);
+  }
+
+  .hotel-carousel .carousel-indicators {
+    bottom: var(--space-2);
+  }
+
+  .hotel-carousel .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+  }
+
+  .hotel-carousel .carousel-indicators button.active {
+    width: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hotel-carousel .carousel-item {
+    height: 220px;
+  }
+}
+
+/* Loading State */
+.hotel-carousel-loading {
+  width: 100%;
+  height: 400px;
+  background: var(--gray-200);
+  border-radius: var(--rounded-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Smooth transitions for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .hotel-carousel .carousel-control-prev,
+  .hotel-carousel .carousel-control-next {
+    opacity: 1;
+  }
+}

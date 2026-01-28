@@ -1,0 +1,42 @@
+# Node.js
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+*.log
+
+# Dependency directories
+frontend/node_modules/
+backend/target/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+*.env
+.env.local
+
+# Application properties with sensitive data
+backend/src/main/resources/application.properties
+
+# Maven
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+
+# Misc
+uploads/
+CLAUDE.MD
+DOCUMENTATION.md
+MODERNIZATION_PLAN.md
+TODOLIST.md

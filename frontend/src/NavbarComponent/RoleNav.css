@@ -1,0 +1,162 @@
+/* Role-Based Navigation Styles */
+
+/* Login Button (Normal Header) */
+.role-nav-login {
+  color: rgba(226, 232, 240, 0.95) !important;
+  font-weight: 500;
+  background: rgba(59, 130, 246, 0.1) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  padding: 0.625rem 1.5rem !important;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+}
+
+.role-nav-login:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Register Button */
+.role-nav-register {
+  color: rgba(226, 232, 240, 0.95) !important;
+  font-weight: 500;
+  background: rgba(59, 130, 246, 0.1) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  padding: 0.625rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+}
+
+.role-nav-register:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Logout Button */
+.role-nav-logout {
+  color: #ffffff !important;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  border: 2px solid rgba(239, 68, 68, 0.3) !important;
+  padding: 0.625rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.role-nav-logout:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
+}
+
+/* Dropdown Styling */
+.modern-header .dropdown-menu {
+  background: linear-gradient(135deg,
+    rgba(15, 23, 42, 0.98) 0%,
+    rgba(30, 41, 59, 0.98) 50%,
+    rgba(51, 65, 85, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  min-width: 200px;
+}
+
+.modern-header .dropdown-item {
+  color: rgba(226, 232, 240, 0.9);
+  padding: 0.625rem 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+
+.modern-header .dropdown-item:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: #ffffff;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.modern-header .dropdown-item:active {
+  background: rgba(59, 130, 246, 0.3);
+  color: #ffffff;
+}
+
+.modern-header .dropdown-toggle {
+  color: rgba(226, 232, 240, 0.9);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.modern-header .dropdown-toggle:hover {
+  color: #ffffff;
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+.modern-header .dropdown-toggle::after {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.modern-header .dropdown-divider {
+  margin: 0.5rem 0;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Role-specific nav items alignment */
+.modern-header .navbar-nav.ms-auto {
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Responsive Dropdown */
+@media (max-width: 991px) {
+  .modern-header .dropdown-menu {
+    background: linear-gradient(135deg,
+      rgba(15, 23, 42, 0.98) 0%,
+      rgba(30, 41, 59, 0.98) 50%,
+      rgba(51, 65, 85, 0.98) 100%);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding-left: 1rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .modern-header .dropdown-item {
+    font-size: 0.9rem;
+  }
+
+  .role-nav-register,
+  .role-nav-login,
+  .role-nav-logout {
+    width: 100%;
+    text-align: center;
+    margin: 0.25rem 0;
+  }
+}

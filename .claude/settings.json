@@ -1,0 +1,10 @@
+{
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python -m uv run:*)"
+    ]
+  }
+}

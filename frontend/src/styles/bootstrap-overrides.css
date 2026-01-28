@@ -1,0 +1,157 @@
+/* bootstrap-overrides.css - Custom Bootstrap Overrides */
+
+/* Override Bootstrap primary color to match design tokens */
+:root {
+  --bs-primary: #1E4F7A;
+  --bs-primary-rgb: 30, 79, 122;
+  --bs-link-color: #38BDF8;
+  --bs-link-hover-color: #1E4F7A;
+}
+
+/* Primary button overrides */
+.btn-primary {
+  --bs-btn-bg: #1E4F7A;
+  --bs-btn-border-color: #1E4F7A;
+  --bs-btn-hover-bg: #38BDF8;
+  --bs-btn-hover-border-color: #38BDF8;
+  --bs-btn-active-bg: #0EA5E9;
+  --bs-btn-active-border-color: #0EA5E9;
+  --bs-btn-focus-shadow-rgb: 56, 189, 248;
+}
+
+/* Secondary button - using accent color */
+.btn-secondary {
+  --bs-btn-bg: #38BDF8;
+  --bs-btn-border-color: #38BDF8;
+  --bs-btn-hover-bg: #0ea5e9;
+  --bs-btn-hover-border-color: #0ea5e9;
+  --bs-btn-active-bg: #0284c7;
+  --bs-btn-active-border-color: #0284c7;
+  --bs-btn-color: #ffffff;
+}
+
+/* Outline buttons */
+.btn-outline-primary {
+  --bs-btn-color: #1E4F7A;
+  --bs-btn-border-color: #1E4F7A;
+  --bs-btn-hover-bg: #1E4F7A;
+  --bs-btn-hover-border-color: #1E4F7A;
+  --bs-btn-active-bg: #163a5a;
+  --bs-btn-active-border-color: #163a5a;
+}
+
+/* Form control focus state */
+.form-control:focus,
+.form-select:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25);
+}
+
+/* Card overrides */
+.card {
+  border-radius: 12px;
+  border-color: var(--border-default, #e5e7eb);
+}
+
+/* Navbar overrides */
+.navbar {
+  background-color: var(--bg-card, #ffffff) !important;
+}
+
+.navbar-brand {
+  color: #1E4F7A !important;
+  font-weight: 700;
+}
+
+/* Nav link overrides */
+.nav-link {
+  color: var(--text-secondary, #6b7280);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #1E4F7A;
+}
+
+.nav-link.active {
+  color: #1E4F7A !important;
+  font-weight: 600;
+}
+
+/* Modal overrides */
+.modal-content {
+  border-radius: 12px;
+  border: none;
+}
+
+.modal-header {
+  border-bottom-color: var(--border-light, #f3f4f6);
+}
+
+.modal-footer {
+  border-top-color: var(--border-light, #f3f4f6);
+}
+
+/* Badge overrides */
+.badge.bg-primary {
+  background-color: #1E4F7A !important;
+}
+
+.badge.bg-secondary {
+  background-color: #38BDF8 !important;
+}
+
+/* Alert overrides */
+.alert-primary {
+  background-color: rgba(30, 79, 122, 0.1);
+  border-color: rgba(30, 79, 122, 0.2);
+  color: #1E4F7A;
+}
+
+/* Pagination overrides */
+.page-link {
+  color: #1E4F7A;
+}
+
+.page-link:hover {
+  color: #163a5a;
+  background-color: rgba(30, 79, 122, 0.1);
+}
+
+.page-item.active .page-link {
+  background-color: #1E4F7A;
+  border-color: #1E4F7A;
+}
+
+/* Table overrides */
+.table {
+  --bs-table-hover-bg: rgba(56, 189, 248, 0.05);
+}
+
+/* Dropdown overrides */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: rgba(56, 189, 248, 0.1);
+  color: #1E4F7A;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #1E4F7A;
+}
+
+/* Toast overrides */
+.toast {
+  border-radius: 8px;
+}
+
+/* Spinner overrides */
+.spinner-border {
+  color: #38BDF8;
+}
+
+/* Progress bar overrides */
+.progress-bar {
+  background-color: #38BDF8;
+}

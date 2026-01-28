@@ -1,0 +1,128 @@
+/* Add Facility Form Styles */
+
+.add-facility-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--bg-secondary);
+  padding: 2rem 1rem;
+  padding-top: 2rem;
+}
+
+.add-facility-container {
+  width: 100%;
+  max-width: 25rem;
+}
+
+.add-facility-card {
+  background: #1F2937 !important;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  border: 1px solid #374151;
+}
+
+.add-facility-header {
+  background: #1F2937;
+  color: #F8FAFC;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #374151;
+}
+
+.add-facility-header h5 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #F8FAFC;
+}
+
+.add-facility-body {
+  padding: 2rem;
+  background: #1F2937;
+}
+
+.add-facility-body .form-label {
+  color: #F8FAFC;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.add-facility-body .form-control {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #374151;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  background: #1F2937;
+  color: #F8FAFC;
+}
+
+.add-facility-body .form-control:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+  background: #1F2937;
+}
+
+.add-facility-body .form-control::placeholder {
+  color: #9ca3af;
+}
+
+.add-facility-body textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Add Facility Button - matching Create Account style */
+.btn-add-facility {
+  background: #1E4F7A;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  min-width: 150px;
+}
+
+.btn-add-facility:hover {
+  background: #38BDF8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.btn-add-facility:active {
+  transform: translateY(0);
+}
+
+/* Error state for inputs */
+.add-facility-body .form-control.error {
+  border-color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .add-facility-page {
+    padding: 1rem;
+  }
+
+  .add-facility-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .add-facility-body {
+    padding: 1.5rem;
+  }
+
+  .add-facility-header h5 {
+    font-size: 1.25rem;
+  }
+}

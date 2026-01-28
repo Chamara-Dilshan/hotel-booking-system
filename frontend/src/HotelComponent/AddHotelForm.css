@@ -1,0 +1,148 @@
+/* Add Hotel Form Styles */
+
+.add-hotel-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--bg-secondary);
+  padding: 2rem 1rem;
+  padding-top: 2rem;
+}
+
+.add-hotel-container {
+  width: 100%;
+  max-width: 50rem;
+}
+
+.add-hotel-card {
+  background: #1F2937 !important;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  border: 1px solid #374151;
+}
+
+.add-hotel-header {
+  background: #1F2937;
+  color: #F8FAFC;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #374151;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.add-hotel-header h5 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #F8FAFC;
+}
+
+.add-hotel-body {
+  padding: 2rem;
+  background: #1F2937;
+}
+
+.add-hotel-body .form-label {
+  color: #F8FAFC;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.add-hotel-body .form-control,
+.add-hotel-body .form-select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #374151;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  background: #1F2937;
+  color: #F8FAFC;
+}
+
+.add-hotel-body .form-control:focus,
+.add-hotel-body .form-select:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+  background: #1F2937;
+}
+
+.add-hotel-body .form-control::placeholder {
+  color: #9ca3af;
+}
+
+.add-hotel-body textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Save Hotel Button - matching Create Account style */
+.btn-save-hotel {
+  background: #1E4F7A;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  min-width: 150px;
+}
+
+.btn-save-hotel:hover {
+  background: #38BDF8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.btn-save-hotel:active {
+  transform: translateY(0);
+}
+
+/* File input styling */
+.add-hotel-body input[type="file"] {
+  background: #1F2937;
+  color: #F8FAFC;
+}
+
+.add-hotel-body input[type="file"]::file-selector-button {
+  background: #374151;
+  color: #F8FAFC;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+.add-hotel-body input[type="file"]::file-selector-button:hover {
+  background: #4B5563;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .add-hotel-page {
+    padding: 1rem;
+  }
+
+  .add-hotel-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .add-hotel-body {
+    padding: 1.5rem;
+  }
+
+  .add-hotel-header h5 {
+    font-size: 1.25rem;
+  }
+}
