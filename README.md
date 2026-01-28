@@ -6,6 +6,35 @@ A full-stack web application for hotel discovery, booking, and management with i
 
 This Hotel Booking System enables users to search for hotels, make reservations, process payments through Stripe, and manage bookings. The system supports multiple user roles including customers, hotel managers, and administrators, providing a comprehensive solution for hotel management and booking operations.
 
+## Quick Start
+
+For experienced developers:
+
+```bash
+# Clone repository
+git clone https://github.com/Chamara-Dilshan/hotel-booking-system.git
+cd hotel-booking-system
+
+# Setup database
+createdb hotelManagementSystemFinal
+
+# Configure backend (see detailed instructions below)
+cd backend/src/main/resources
+cp application.properties.example application.properties
+# Edit application.properties with your database and Stripe credentials
+
+# Run backend
+cd ../../..
+mvn spring-boot:run
+
+# Run frontend (in new terminal)
+cd frontend
+npm install
+npm start
+```
+
+Visit http://localhost:3000 to access the application.
+
 ## Features
 
 - **Hotel Discovery & Search**: Browse and search hotels by location with detailed information
@@ -57,7 +86,7 @@ Before running this project, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Chamara-Dilshan/hotel-booking-system.git
 cd hotel-booking-system
 ```
 
@@ -71,24 +100,45 @@ CREATE DATABASE hotelManagementSystemFinal;
 
 ### 3. Backend Configuration
 
-Navigate to the backend directory and configure the database connection:
+**IMPORTANT**: The repository does not include `application.properties` for security reasons (contains sensitive data like API keys and passwords).
+
+Navigate to the backend directory:
 
 ```bash
-cd backend
+cd backend/src/main/resources
 ```
 
-Edit `src/main/resources/application.properties`:
+Create your `application.properties` file from the example template:
+
+```bash
+# Copy the example file
+cp application.properties.example application.properties
+```
+
+Edit `application.properties` and configure with your actual values:
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/hotelManagementSystemFinal
-spring.datasource.username=your_postgres_username
-spring.datasource.password=your_postgres_password
+# PostgreSQL Database
+spring.datasource.url=jdbc:postgresql://localhost:5432/hotelManagementSystemFinal?user=YOUR_USERNAME&password=YOUR_PASSWORD
 
-# File upload directory
-file.upload-dir=D:/hotel-images
+# File upload directory (create this folder)
+disk.upload.basepath=D:/Projects/hotel-booking-system/backend/uploads
+
+# Stripe API Key (get from https://dashboard.stripe.com/test/apikeys)
+stripe.api.key=sk_test_YOUR_STRIPE_SECRET_KEY_HERE
+
+# Admin Credentials (change in production)
+app.admin.email=superadmin@hotel.com
+app.admin.password=admin123
 ```
 
-Create the image storage directory specified in the configuration.
+**Security Note**: Never commit `application.properties` to Git. It's already in `.gitignore` to protect your credentials.
+
+Create the image storage directory:
+
+```bash
+mkdir -p D:/Projects/hotel-booking-system/backend/uploads
+```
 
 ### 4. Backend Installation
 
@@ -124,6 +174,20 @@ npm start
 ```
 
 The frontend will start on `http://localhost:3000`
+
+## ⚠️ Important Security Notes
+
+**Protect Your Credentials**:
+- The `application.properties` file contains sensitive data (API keys, passwords)
+- This file is **not included** in the repository for security
+- It's listed in `.gitignore` to prevent accidental commits
+- **Never commit** `application.properties` with real credentials to version control
+
+**If You Fork This Project**:
+1. Use `application.properties.example` as your template
+2. Create your own `application.properties` locally
+3. Never push sensitive credentials to GitHub
+4. Rotate any API keys that are accidentally exposed
 
 ## Running the Application
 
@@ -232,18 +296,34 @@ JWT_SECRET=your_jwt_secret
 FILE_UPLOAD_DIR=/path/to/upload/directory
 ```
 
-### Stripe Configuration
+### Stripe Payment Configuration
 
-To enable payment processing:
+Payment processing requires a Stripe account. Follow these steps:
 
-1. Create a Stripe account at [stripe.com](https://stripe.com)
-2. Get your API keys from the Stripe Dashboard
-3. Configure backend with secret key
-4. Configure frontend with publishable key
+1. **Create Stripe Account**
+   - Sign up at [stripe.com](https://stripe.com)
+   - Activate your account
 
-For testing, use Stripe test cards:
+2. **Get API Keys**
+   - Go to [Stripe Dashboard - API Keys](https://dashboard.stripe.com/test/apikeys)
+   - Copy your **Secret key** (starts with `sk_test_...`)
+   - Copy your **Publishable key** (starts with `pk_test_...`)
+
+3. **Configure Backend**
+   - Add secret key to `backend/src/main/resources/application.properties`:
+     ```properties
+     stripe.api.key=sk_test_YOUR_SECRET_KEY_HERE
+     ```
+
+4. **Configure Frontend** (if needed)
+   - Update publishable key in payment components
+
+**Test Cards** (Use in test mode):
 - Success: `4242 4242 4242 4242`
 - Decline: `4000 0000 0000 0002`
+- Any future expiry date and any 3-digit CVC
+
+**Important**: Use test keys for development. Switch to live keys only in production.
 
 ## Testing
 
